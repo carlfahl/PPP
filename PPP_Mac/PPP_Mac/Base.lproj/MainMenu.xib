@@ -707,9 +707,9 @@
                         </textFieldCell>
                     </textField>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWW-Pm-c4E">
-                        <rect key="frame" x="314" y="160" width="99" height="18"/>
+                        <rect key="frame" x="314" y="160" width="120" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Use Capitals" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KWt-vk-hqL">
+                        <buttonCell key="cell" type="check" title="Use Upper Case" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KWt-vk-hqL">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -759,6 +759,14 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-Fl-gPO">
+                        <rect key="frame" x="314" y="121" width="120" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Use Lower Case" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="TYa-zX-G8W">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
             </view>
         </window>
