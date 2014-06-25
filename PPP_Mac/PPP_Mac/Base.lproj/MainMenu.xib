@@ -13,7 +13,9 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="dNameTextFeild" destination="yyQ-Ao-5tB" id="M7O-uH-5d6"/>
                 <outlet property="passLengthTextFeild" destination="FeQ-Xh-mGH" id="xQ4-HV-NyD"/>
+                <outlet property="uNameTextFeild" destination="5Qe-lC-8S5" id="O8h-Z0-eEB"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>

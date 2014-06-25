@@ -17,10 +17,14 @@
     [self setPassword:aPassword];
 }
 
-- (IBAction)setUName:(NSTextField *)sender {
+- (IBAction)setUName:(id)sender {
+    NSString *uname = [_uNameTextFeild stringValue];
+    NSLog(@"The username is: %@", uname);
 }
 
-- (IBAction)setDName:(NSTextField *)sender {
+- (IBAction)setDName:(id)sender {
+    NSString *dname = [_dNameTextFeild stringValue];
+    NSLog(@"The website is: %@", dname);
 }
 
 - (IBAction)setUseSpecChar:(id)sender {

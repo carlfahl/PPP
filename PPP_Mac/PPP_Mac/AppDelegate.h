@@ -14,6 +14,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTextField *passLengthTextFeild;
+@property (weak) IBOutlet NSTextField *uNameTextFeild;
+@property (weak) IBOutlet NSTextField *dNameTextFeild;
 
 @property (strong) Password *password;
 
