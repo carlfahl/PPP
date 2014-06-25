@@ -18,6 +18,7 @@
 		0A42CB0A195A23DB0097B581 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A42CAE9195A23DB0097B581 /* Cocoa.framework */; };
 		0A42CB12195A23DB0097B581 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A42CB10195A23DB0097B581 /* InfoPlist.strings */; };
 		0A42CB14195A23DB0097B581 /* PPP_MacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A42CB13195A23DB0097B581 /* PPP_MacTests.m */; };
+		0A7802A5195A4CA900B187E0 /* Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7802A4195A4CA900B187E0 /* Password.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		0A42CB0F195A23DB0097B581 /* PPP_MacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PPP_MacTests-Info.plist"; sourceTree = "<group>"; };
 		0A42CB11195A23DB0097B581 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A42CB13195A23DB0097B581 /* PPP_MacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPP_MacTests.m; sourceTree = "<group>"; };
+		0A7802A3195A4CA900B187E0 /* Password.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Password.h; sourceTree = "<group>"; };
+		0A7802A4195A4CA900B187E0 /* Password.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Password.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				0A42CAFE195A23DB0097B581 /* MainMenu.xib */,
 				0A42CB01195A23DB0097B581 /* Images.xcassets */,
 				0A42CAF0195A23DB0097B581 /* Supporting Files */,
+				0A7802A3195A4CA900B187E0 /* Password.h */,
+				0A7802A4195A4CA900B187E0 /* Password.m */,
 			);
 			path = PPP_Mac;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			files = (
 				0A42CAFD195A23DB0097B581 /* AppDelegate.m in Sources */,
 				0A42CAF6195A23DB0097B581 /* main.m in Sources */,
+				0A7802A5195A4CA900B187E0 /* Password.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +472,7 @@
 				0A42CB19195A23DB0097B581 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A42CB1A195A23DB0097B581 /* Build configuration list for PBXNativeTarget "PPP_MacTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +481,7 @@
 				0A42CB1C195A23DB0097B581 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

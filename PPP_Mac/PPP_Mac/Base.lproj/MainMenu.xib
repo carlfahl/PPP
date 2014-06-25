@@ -13,6 +13,7 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="passLengthTextFeild" destination="FeQ-Xh-mGH" id="xQ4-HV-NyD"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -669,35 +670,44 @@
         <window title="PPP_Mac" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="528" height="284"/>
+            <rect key="contentRect" x="335" y="390" width="533" height="382"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="528" height="284"/>
+                <rect key="frame" x="0.0" y="0.0" width="533" height="382"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e0W-fm-K4g">
-                        <rect key="frame" x="65" y="160" width="164" height="18"/>
+                        <rect key="frame" x="65" y="258" width="164" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Use Special Characters" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Or1-Vi-fNi">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="setUseSpecChar:" target="Voe-Tx-rLC" id="Rr3-to-oVz"/>
+                        </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5q9-Vr-50b">
-                        <rect key="frame" x="65" y="121" width="105" height="18"/>
+                        <rect key="frame" x="65" y="219" width="105" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Use Numbers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="uXG-fp-6wY">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="setUseNumbers:" target="Voe-Tx-rLC" id="80E-xt-XAp"/>
+                        </connections>
                     </button>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7j-EO-bRv">
-                        <rect key="frame" x="395" y="80" width="19" height="27"/>
+                        <rect key="frame" x="395" y="178" width="19" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="6Do-LD-ciE"/>
+                        <connections>
+                            <action selector="incrDecPassLength:" target="Voe-Tx-rLC" id="0JD-si-umJ"/>
+                        </connections>
                     </stepper>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FeQ-Xh-mGH">
-                        <rect key="frame" x="318" y="83" width="72" height="22"/>
+                        <rect key="frame" x="318" y="181" width="72" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="oLL-6R-rKG">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" id="lKh-Bm-Mvy"/>
@@ -705,17 +715,23 @@
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <action selector="setPassLength:" target="Voe-Tx-rLC" id="wh5-Yi-xmv"/>
+                        </connections>
                     </textField>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWW-Pm-c4E">
-                        <rect key="frame" x="314" y="160" width="120" height="18"/>
+                        <rect key="frame" x="314" y="258" width="120" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Use Upper Case" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KWt-vk-hqL">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="setUseUppers:" target="Voe-Tx-rLC" id="6A2-sq-0DJ"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcE-0V-Mqx">
-                        <rect key="frame" x="202" y="83" width="110" height="17"/>
+                        <rect key="frame" x="202" y="181" width="110" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password Length" id="DAf-2w-8lV">
                             <font key="font" metaFont="system"/>
@@ -724,16 +740,19 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Qe-lC-8S5">
-                        <rect key="frame" x="186" y="242" width="225" height="22"/>
+                        <rect key="frame" x="186" y="340" width="225" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="4zI-kQ-3yn">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <action selector="setUName:" target="Voe-Tx-rLC" id="0HC-MS-Kct"/>
+                        </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ouL-wP-2ox">
-                        <rect key="frame" x="65" y="242" width="72" height="17"/>
+                        <rect key="frame" x="65" y="340" width="72" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="User Name" id="Wgv-v2-UUD">
                             <font key="font" metaFont="system"/>
@@ -742,7 +761,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kg6-Nh-O2Y">
-                        <rect key="frame" x="67" y="217" width="58" height="17"/>
+                        <rect key="frame" x="65" y="315" width="58" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Web Site" id="ZKe-Ru-szb">
                             <font key="font" metaFont="system"/>
@@ -751,22 +770,60 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyQ-Ao-5tB">
-                        <rect key="frame" x="186" y="210" width="225" height="22"/>
+                        <rect key="frame" x="186" y="315" width="225" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="xgd-nQ-ACF">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <action selector="setDName:" target="Voe-Tx-rLC" id="egZ-24-Lfc"/>
+                        </connections>
                     </textField>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-Fl-gPO">
-                        <rect key="frame" x="314" y="121" width="120" height="18"/>
+                        <rect key="frame" x="314" y="219" width="120" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Use Lower Case" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="TYa-zX-G8W">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="setUseLowers:" target="Voe-Tx-rLC" id="Lam-DL-QIV"/>
+                        </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ICL-Rh-HaN">
+                        <rect key="frame" x="184" y="127" width="164" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundTextured" title="Create Password" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DnE-Oe-IwX">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="generatePassword:" target="Voe-Tx-rLC" id="P6Q-2Z-pAs"/>
+                        </connections>
+                    </button>
+                    <box autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="8lD-OS-sSo">
+                        <rect key="frame" x="6" y="95" width="515" height="5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zhr-R4-Sz6">
+                        <rect key="frame" x="253" y="19" width="268" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="2" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="ZCz-wf-b0d"/>
+                    </levelIndicator>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2e-zF-6Se">
+                        <rect key="frame" x="121" y="20" width="120" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password Strength" id="5Fu-Wz-ebK">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
         </window>
