@@ -7,12 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "Password.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    Password *aPassword = [[Password alloc] init];
+    [self setPassword:aPassword];
 }
 
 - (IBAction)setUName:(NSTextField *)sender {
