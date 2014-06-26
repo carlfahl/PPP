@@ -17,5 +17,10 @@
 @property (assign) int useNumbers;
 @property (assign) NSString* uName;
 @property (assign) NSString* dName;
+@property (assign) int passStrength;
+@property (assign) NSMutableString* password;
+
+- (id) initWithPassStrength: (int) strength;
+- (void) genPassword;
 
 @end
