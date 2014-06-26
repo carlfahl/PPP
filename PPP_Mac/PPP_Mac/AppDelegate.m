@@ -47,20 +47,17 @@
 }
 
 - (IBAction)setUseLowers:(id)sender {
-    NSLog(@"Use Lowers: %1i", [sender intValue]);
     int ulowers = [sender intValue];
     [[self password] setUseLowers:ulowers];
 }
 
 - (IBAction)setPassLength:(id)sender {
-    NSLog(@"Will make a password of length %2i", [sender intValue]);
     int passlen = [sender intValue];
     [[self password] setPassLength:passlen];
     [self syncPassLengthUIs];
 }
 
 - (IBAction)generatePassword:(id)sender {
-    NSLog(@"Got the signal to generate password");
     [[self password] genPassword];
 }
 
