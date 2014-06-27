@@ -27,7 +27,11 @@
     NSString* numString;
     NSRange stidex;
     
-    [self setPassword:[NSMutableString stringWithString:@""]];
+    num_types = 0;
+    
+    [self setPassword:[[NSMutableString alloc] init]];
+    //[self setPassword:[[NSMutableString alloc] initWithCapacity:10]];
+    //[self setPassword:[NSMutableString stringWithString:@""]];
     
     stidex.length = 1;
     
@@ -61,28 +65,23 @@
         switch (rand()%num_types)
         {
             case 0:
-                NSLog(@"Adding a special character");
                 idex = rand()%10;
                 stidex.location = idex;
-                [[self password] stringByAppendingString:[[self specChars] substringWithRange:stidex]];
+                [[self password] appendString:[[self specChars] substringWithRange:stidex]];
                 break;
             case 1:
-                NSLog(@"Adding a number");
                 numString = [NSString stringWithFormat:@"%1i", rand()%10];
-                NSLog(@"%@", numString);
-                [[self password] stringByAppendingString:numString];
+                [[self password] appendString:numString];
                 break;
             case 2:
-                NSLog(@"Adding a lower");
                 idex = rand()%26;
                 stidex.location = idex;
-                [[self password] stringByAppendingString:[[self letters] substringWithRange:stidex]];
+                [[self password] appendString:[[self letters] substringWithRange:stidex]];
                 break;
             case 3:
-                NSLog(@"Adding a upper");
                 idex = rand()%26;
                 stidex.location = idex;
-                [[self password] stringByAppendingString:[[self letters] substringWithRange:stidex]];
+                [[self password] appendString:[[[self letters] substringWithRange:stidex] uppercaseString]];
                 break;
             default:
                 NSLog(@"Should have added something");

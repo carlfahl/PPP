@@ -18,7 +18,7 @@
 @property (assign) NSString* uName;
 @property (assign) NSString* dName;
 @property (assign) int passStrength;
-@property (assign) NSMutableString* password;
+@property (retain) NSMutableString* password;
 @property (assign) NSString* specChars;
 @property (assign) NSString* letters;
 
