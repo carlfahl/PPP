@@ -21,13 +21,13 @@
 
 - (IBAction)setUName:(id)sender {
     NSString *uname = [_uNameTextFeild stringValue];
-    NSLog(@"The username is: %@", uname);
+    //NSLog(@"The username is: %@", uname);
     [[self password] setUName:uname];
 }
 
 - (IBAction)setDName:(id)sender {
     NSString *dname = [_dNameTextFeild stringValue];
-    NSLog(@"The website is: %@", dname);
+    //NSLog(@"The website is: %@", dname);
     [[self password] setDName:dname];
 }
 
@@ -58,7 +58,10 @@
 }
 
 - (IBAction)generatePassword:(id)sender {
-    [[self password] genPassword];
+    [self setPassdict:[[NSDictionary alloc]init]];
+    [self setPassdict:[[self password] genPassword]];
+    [self setPasswordTextFeild:[[self passdict] objectForKey:@"password"]];
+    [[self passStrengthIndicator] setIntValue: [[self passdict] objectForKey:@"passStrength"]];
 }
 
 - (void) setPassStrengthIndicatorLevel
@@ -72,6 +75,11 @@
     int currPassLength = [[self password] passLength];
     [[self passLengthStepper] setIntValue:currPassLength];
     [[self passLengthTextFeild] setIntValue:currPassLength];
+}
+
+- (void) setPasswordTextFeild:(NSString *)pw
+{
+    [[self passwordFeild] setStringValue:pw];
 }
 
 @end

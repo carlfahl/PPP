@@ -17,6 +17,7 @@
                 <outlet property="passLengthStepper" destination="U7j-EO-bRv" id="aaM-kX-ZvN"/>
                 <outlet property="passLengthTextFeild" destination="FeQ-Xh-mGH" id="xQ4-HV-NyD"/>
                 <outlet property="passStrengthIndicator" destination="Zhr-R4-Sz6" id="m3F-ab-HqU"/>
+                <outlet property="passwordFeild" destination="bS6-Kk-Iz1" id="mfx-Ro-W09"/>
                 <outlet property="uNameTextFeild" destination="5Qe-lC-8S5" id="O8h-Z0-eEB"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -823,6 +824,24 @@
                         <rect key="frame" x="121" y="20" width="120" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password Strength" id="5Fu-Wz-ebK">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bS6-Kk-Iz1">
+                        <rect key="frame" x="161" y="56" width="331" height="33"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" drawsBackground="YES" id="6FS-ik-0ft">
+                            <font key="font" metaFont="system" size="23"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PK1-K1-HLI">
+                        <rect key="frame" x="20" y="56" width="140" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Generated Password" id="Xpt-HC-9yI">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

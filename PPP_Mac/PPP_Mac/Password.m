@@ -21,7 +21,7 @@
     return self;
 }
 
-- (void) genPassword
+- (NSDictionary*) genPassword
 {
     int num_types, idex;
     NSString* numString;
@@ -30,6 +30,7 @@
     num_types = 0;
     
     [self setPassword:[[NSMutableString alloc] init]];
+    [self setRetdict:[[NSDictionary alloc]init]];
     //[self setPassword:[[NSMutableString alloc] initWithCapacity:10]];
     //[self setPassword:[NSMutableString stringWithString:@""]];
     
@@ -70,8 +71,9 @@
                 [[self password] appendString:[[self specChars] substringWithRange:stidex]];
                 break;
             case 1:
-                numString = [NSString stringWithFormat:@"%1i", rand()%10];
-                [[self password] appendString:numString];
+                //numString = [NSString stringWithFormat:@"%1i", rand()%10];
+                //[[self password] appendString:numString];
+                [[self password] appendString:[NSString stringWithFormat:@"%1i", rand()%10]];
                 break;
             case 2:
                 idex = rand()%26;
@@ -89,7 +91,13 @@
         }
     }
     
+    [self setPassStrength:1];
+    
     NSLog(@"%@", [self password]);
+    
+    [self setRetdict:[NSDictionary dictionaryWithObjectsAndKeys:[self password], @"password", [self passStrength], @"passStrength", nil]];
+    
+    return [self retdict];
     
 }
 
