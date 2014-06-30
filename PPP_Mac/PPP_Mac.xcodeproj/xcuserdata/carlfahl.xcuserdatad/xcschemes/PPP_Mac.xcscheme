@@ -38,6 +38,16 @@
                ReferencedContainer = "container:PPP_Mac.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0A9222A6195FE52200916E93"
+               BuildableName = "PPP_IOSTests.xctest"
+               BlueprintName = "PPP_IOSTests"
+               ReferencedContainer = "container:PPP_Mac.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

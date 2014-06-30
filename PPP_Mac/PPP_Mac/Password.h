@@ -23,7 +23,10 @@
 @property (assign) NSString* specChars;
 @property (assign) NSString* letters;
 
-- (id) initWithPassStrength: (int) strength;
+- (id) initWithPassStrength: (int) strength WithUseUppers: (int) uUppers
+              WithUseLowers: (int) uLowers WithUseSpecChar: (int) uspecchar
+             WithUseNumbers: (int) usenumbers;
+
 - (NSDictionary*) genPassword;
 
 @end

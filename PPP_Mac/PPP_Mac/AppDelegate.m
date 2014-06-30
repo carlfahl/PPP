@@ -13,7 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    Password *aPassword = [[Password alloc] initWithPassStrength:10];
+    Password *aPassword = [[Password alloc] initWithPassStrength:10 WithUseUppers:1 WithUseLowers:1 WithUseSpecChar:1 WithUseNumbers:1];
     [self setPassword:aPassword];
     [self syncPassLengthUIs];
     [self setPassStrengthIndicatorLevel];

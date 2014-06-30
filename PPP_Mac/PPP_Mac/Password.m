@@ -12,20 +12,28 @@
 
 @implementation Password
 
-- (id) initWithPassStrength:(int)strength
+- (id) initWithPassStrength:(int)strength WithUseUppers: (int) uUppers
+              WithUseLowers: (int) uLowers WithUseSpecChar: (int) uspecchar
+             WithUseNumbers: (int) usenumbers
 {
     if (self = [super init])
     {
         [self setPassStrength:strength];
+        [self setUseSpecChar:uspecchar];
+        [self setUseNumbers:usenumbers];
+        [self setUseLowers:uLowers];
+        [self setUseUppers:uUppers];
     }
     return self;
 }
 
 - (NSDictionary*) genPassword
 {
-    int num_types, idex;
+    int num_types = 0;
+    int idex;
     NSString* numString;
     NSRange stidex;
+    int* tmp;
     
     num_types = 0;
     
@@ -44,18 +52,22 @@
     srand(time(NULL));
     if ([self useSpecChar] == 1)
     {
+        tmp[num_types] = 0;
         num_types++;
     }
     if ([self useNumbers] == 1)
     {
+        tmp[num_types] = 1;
         num_types++;
     }
     if ([self useLowers] == 1)
     {
+        tmp[num_types] = 2;
         num_types++;
     }
     if ([self useUppers] == 1)
     {
+        tmp[num_types] = 3;
         num_types++;
     }
     
@@ -63,7 +75,7 @@
     
     for (int i=0; i<[self passLength]; i++)
     {
-        switch (rand()%num_types)
+        switch (tmp[rand()%num_types])
         {
             case 0:
                 idex = rand()%10;
