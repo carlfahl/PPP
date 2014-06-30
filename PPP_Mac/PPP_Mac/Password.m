@@ -37,6 +37,8 @@
     
     num_types = 0;
     
+    tmp = malloc(4*sizeof(int));
+    
     [self setPassword:[[NSMutableString alloc] init]];
     [self setRetdict:[[NSDictionary alloc]init]];
     //[self setPassword:[[NSMutableString alloc] initWithCapacity:10]];
