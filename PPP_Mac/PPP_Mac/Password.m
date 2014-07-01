@@ -40,7 +40,8 @@
     tmp = malloc(4*sizeof(int));
     
     [self setPassword:[[NSMutableString alloc] init]];
-    [self setRetdict:[[NSDictionary alloc]init]];
+    [self setRetdict:[[NSDictionary alloc] init]];
+    [self setNoCharAlert:[[NSAlert alloc] init]];
     //[self setPassword:[[NSMutableString alloc] initWithCapacity:10]];
     //[self setPassword:[NSMutableString stringWithString:@""]];
     
@@ -75,37 +76,45 @@
     
     NSLog(@"%1i", num_types);
     
-    for (int i=0; i<[self passLength]; i++)
+    if (num_types > 0)
     {
-        switch (tmp[rand()%num_types])
+        for (int i=0; i<[self passLength]; i++)
         {
-            case 0:
-                idex = rand()%10;
-                stidex.location = idex;
-                [[self password] appendString:[[self specChars] substringWithRange:stidex]];
-                break;
-            case 1:
-                //numString = [NSString stringWithFormat:@"%1i", rand()%10];
-                //[[self password] appendString:numString];
-                [[self password] appendString:[NSString stringWithFormat:@"%1i", rand()%10]];
-                break;
-            case 2:
-                idex = rand()%26;
-                stidex.location = idex;
-                [[self password] appendString:[[self letters] substringWithRange:stidex]];
-                break;
-            case 3:
-                idex = rand()%26;
-                stidex.location = idex;
-                [[self password] appendString:[[[self letters] substringWithRange:stidex] uppercaseString]];
-                break;
-            default:
-                NSLog(@"Should have added something");
-                break;
+            switch (tmp[rand()%num_types])
+            {
+                case 0:
+                    idex = rand()%10;
+                    stidex.location = idex;
+                    [[self password] appendString:[[self specChars] substringWithRange:stidex]];
+                    break;
+                case 1:
+                    //numString = [NSString stringWithFormat:@"%1i", rand()%10];
+                    //[[self password] appendString:numString];
+                    [[self password] appendString:[NSString stringWithFormat:@"%1i", rand()%10]];
+                    break;
+                case 2:
+                    idex = rand()%26;
+                    stidex.location = idex;
+                    [[self password] appendString:[[self letters] substringWithRange:stidex]];
+                    break;
+                case 3:
+                    idex = rand()%26;
+                    stidex.location = idex;
+                    [[self password] appendString:[[[self letters] substringWithRange:stidex] uppercaseString]];
+                    break;
+                default:
+                    NSLog(@"Should have added something");
+                    break;
+            }
         }
     }
+    else
+    {
+        [[self noCharAlert] setMessageText:@"Please Select at least one character type."];
+        [[self noCharAlert] runModal];
+    }
     
-    [self setPassStrength:1];
+    [self setPassStrength: (10 - [self passLength])];
     
     NSLog(@"%@", [self password]);
     
