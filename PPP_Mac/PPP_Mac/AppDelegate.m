@@ -13,7 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    Password *aPassword = [[Password alloc] initWithPassStrength:10 WithUseUppers:1 WithUseLowers:1 WithUseSpecChar:1 WithUseNumbers:1];
+    Password *aPassword = [[Password alloc] initWithPassStrength:[NSNumber numberWithInt:10] WithUseUppers:1 WithUseLowers:1 WithUseSpecChar:1 WithUseNumbers:1 WithPassLength:1];
     [self setPassword:aPassword];
     [self syncPassLengthUIs];
     [self setPassStrengthIndicatorLevel];
@@ -53,6 +53,10 @@
 
 - (IBAction)setPassLength:(id)sender {
     int passlen = [sender intValue];
+    if (passlen < 1)
+    {
+        passlen = 1;
+    }
     [[self password] setPassLength:passlen];
     [self syncPassLengthUIs];
 }
@@ -61,13 +65,13 @@
     [self setPassdict:[[NSDictionary alloc]init]];
     [self setPassdict:[[self password] genPassword]];
     [self setPasswordTextFeild:[[self passdict] objectForKey:@"password"]];
-    [[self passStrengthIndicator] setIntValue: [[self passdict] objectForKey:@"passStrength"]];
+    [[self passStrengthIndicator] setIntValue: [[[self passdict] objectForKey:@"passStrength"] intValue]];
 }
 
 - (void) setPassStrengthIndicatorLevel
 {
-    int currPassStrength = [[self password] passStrength];
-    [[self passStrengthIndicator] setIntValue:currPassStrength];
+    NSNumber* currPassStrength = [[self password] passStrength];
+    [[self passStrengthIndicator] setIntValue:[currPassStrength intValue]];
 }
 
 - (void) syncPassLengthUIs
@@ -80,6 +84,12 @@
 - (void) setPasswordTextFeild:(NSString *)pw
 {
     [[self passwordFeild] setStringValue:pw];
+}
+
+- (IBAction)setCharNotAllowed:(id)sender
+{
+    NSString *notAllowed = [sender stringValue];
+    [[self password] setNotAllowed:notAllowed];
 }
 
 @end

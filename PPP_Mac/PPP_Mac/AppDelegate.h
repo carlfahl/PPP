@@ -19,6 +19,7 @@
 @property (weak) IBOutlet NSStepper *passLengthStepper;
 @property (weak) IBOutlet NSLevelIndicator *passStrengthIndicator;
 @property (weak) IBOutlet NSTextField *passwordFeild;
+@property (weak) IBOutlet NSTextField *charNotAllowedTextField;
 
 @property (strong) Password *password;
 @property (retain) NSDictionary* passdict;
@@ -34,5 +35,6 @@
 - (void) syncPassLengthUIs;
 - (void) setPassStrengthIndicatorLevel;
 - (void) setPasswordTextFeild:(NSString*)pw;
+- (IBAction)setCharNotAllowed:(id)sender;
 
 @end

@@ -12,9 +12,9 @@
 
 @implementation Password
 
-- (id) initWithPassStrength:(int)strength WithUseUppers: (int) uUppers
+- (id) initWithPassStrength:(NSNumber*) strength WithUseUppers: (int) uUppers
               WithUseLowers: (int) uLowers WithUseSpecChar: (int) uspecchar
-             WithUseNumbers: (int) usenumbers
+             WithUseNumbers: (int) usenumbers WithPassLength: (int) passlen
 {
     if (self = [super init])
     {
@@ -23,6 +23,7 @@
         [self setUseNumbers:usenumbers];
         [self setUseLowers:uLowers];
         [self setUseUppers:uUppers];
+        [self setPassLength:passlen];
     }
     return self;
 }
@@ -31,7 +32,6 @@
 {
     int num_types = 0;
     int idex;
-    NSString* numString;
     NSRange stidex;
     int* tmp;
     
@@ -88,8 +88,6 @@
                     [[self password] appendString:[[self specChars] substringWithRange:stidex]];
                     break;
                 case 1:
-                    //numString = [NSString stringWithFormat:@"%1i", rand()%10];
-                    //[[self password] appendString:numString];
                     [[self password] appendString:[NSString stringWithFormat:@"%1i", rand()%10]];
                     break;
                 case 2:
@@ -114,7 +112,8 @@
         [[self noCharAlert] runModal];
     }
     
-    [self setPassStrength: (10 - [self passLength])];
+    //[self setPassStrength: (10 - [self passLength])];
+    [self setPassStrength: [NSNumber numberWithInt: (10 - [self passLength] + (4-num_types))]];
     
     NSLog(@"%@", [self password]);
     

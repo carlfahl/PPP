@@ -17,16 +17,17 @@
 @property (assign) int useNumbers;
 @property (assign) NSString* uName;
 @property (assign) NSString* dName;
-@property (assign) int passStrength;
+@property (retain) NSNumber* passStrength;
 @property (retain) NSMutableString* password;
 @property (retain) NSDictionary* retdict;
 @property (assign) NSString* specChars;
 @property (assign) NSString* letters;
+@property (assign) NSString* notAllowed;
 @property (assign) NSAlert* noCharAlert;
 
-- (id) initWithPassStrength: (int) strength WithUseUppers: (int) uUppers
+- (id) initWithPassStrength: (NSNumber*) strength WithUseUppers: (int) uUppers
               WithUseLowers: (int) uLowers WithUseSpecChar: (int) uspecchar
-             WithUseNumbers: (int) usenumbers;
+             WithUseNumbers: (int) usenumbers WithPassLength: (int) passlen;
 
 - (NSDictionary*) genPassword;
 
