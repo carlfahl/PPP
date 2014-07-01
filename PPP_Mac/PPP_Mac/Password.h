@@ -22,6 +22,7 @@
 @property (retain) NSDictionary* retdict;
 @property (assign) NSString* specChars;
 @property (assign) NSString* letters;
+@property (assign) NSAlert* noCharAlert;
 
 - (id) initWithPassStrength: (int) strength WithUseUppers: (int) uUppers
               WithUseLowers: (int) uLowers WithUseSpecChar: (int) uspecchar
