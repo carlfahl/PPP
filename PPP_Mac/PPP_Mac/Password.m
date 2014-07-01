@@ -114,7 +114,7 @@
         [[self noCharAlert] runModal];
     }
     
-    [self setPassStrength:1];
+    [self setPassStrength: (10 - [self passLength])];
     
     NSLog(@"%@", [self password]);
     
