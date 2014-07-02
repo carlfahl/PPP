@@ -13,8 +13,9 @@
 @implementation Password
 
 - (id) initWithPassStrength:(NSNumber*) strength WithUseUppers: (int) uUppers
-              WithUseLowers: (int) uLowers WithUseSpecChar: (int) uspecchar
+             WithUseLowers: (int) uLowers WithUseSpecChar: (int) uspecchar
              WithUseNumbers: (int) usenumbers WithPassLength: (int) passlen
+             WithNotAllowed:(NSString *) notAllowed
 {
     if (self = [super init])
     {
@@ -24,6 +25,7 @@
         [self setUseLowers:uLowers];
         [self setUseUppers:uUppers];
         [self setPassLength:passlen];
+        [self setNotAllowed:notAllowed];
     }
     return self;
 }
@@ -34,6 +36,7 @@
     int idex;
     NSRange stidex;
     int* tmp;
+    NSUInteger test_loc;
     
     num_types = 0;
     
@@ -85,20 +88,53 @@
                 case 0:
                     idex = rand()%10;
                     stidex.location = idex;
-                    [[self password] appendString:[[self specChars] substringWithRange:stidex]];
+                    test_loc = [[self notAllowed] rangeOfString:[[self specChars] substringWithRange:stidex]].location;
+                    if(test_loc > 100)
+                    {
+                        [[self password] appendString:[[self specChars] substringWithRange:stidex]];
+                    }
+                    else
+                    {
+                        i--;
+                    }
                     break;
                 case 1:
-                    [[self password] appendString:[NSString stringWithFormat:@"%1i", rand()%10]];
+                    idex = rand()%10;
+                    test_loc = [[self notAllowed] rangeOfString:[NSString stringWithFormat:@"%1i", idex]].location;
+                    if(test_loc > 100)
+                    {
+                        [[self password] appendString:[NSString stringWithFormat:@"%1i", idex]];
+                    }
+                    else
+                    {
+                        i--;
+                    }
                     break;
                 case 2:
                     idex = rand()%26;
                     stidex.location = idex;
-                    [[self password] appendString:[[self letters] substringWithRange:stidex]];
+                    test_loc = [[self notAllowed] rangeOfString:[[self letters] substringWithRange:stidex]].location;
+                    if (test_loc > 100)
+                    {
+                        [[self password] appendString:[[self letters] substringWithRange:stidex]];
+                    }
+                    else
+                    {
+                        i--;
+                    }
                     break;
                 case 3:
                     idex = rand()%26;
                     stidex.location = idex;
-                    [[self password] appendString:[[[self letters] substringWithRange:stidex] uppercaseString]];
+                    test_loc = [[self notAllowed] rangeOfString:[[[self letters] substringWithRange:stidex] uppercaseString]].location;
+                    if (test_loc > 100)
+                    {
+                        [[self password] appendString:[[[self letters] substringWithRange:stidex] uppercaseString]];
+                    }
+                    else
+                    {
+                        i--;
+                    }
                     break;
                 default:
                     NSLog(@"Should have added something");

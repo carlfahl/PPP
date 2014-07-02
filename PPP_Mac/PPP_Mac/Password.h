@@ -26,8 +26,9 @@
 @property (assign) NSAlert* noCharAlert;
 
 - (id) initWithPassStrength: (NSNumber*) strength WithUseUppers: (int) uUppers
-              WithUseLowers: (int) uLowers WithUseSpecChar: (int) uspecchar
-             WithUseNumbers: (int) usenumbers WithPassLength: (int) passlen;
+             WithUseLowers: (int) uLowers WithUseSpecChar: (int) uspecchar
+             WithUseNumbers: (int) usenumbers WithPassLength: (int) passlen
+             WithNotAllowed: (NSString*) notAllowed;
 
 - (NSDictionary*) genPassword;
 

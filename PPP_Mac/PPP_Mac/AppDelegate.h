@@ -36,5 +36,7 @@
 - (void) setPassStrengthIndicatorLevel;
 - (void) setPasswordTextFeild:(NSString*)pw;
 - (IBAction)setCharNotAllowed:(id)sender;
+- (IBAction)copyToClipboard:(id)sender;
+
 
 @end

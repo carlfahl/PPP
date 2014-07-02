@@ -13,7 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    Password *aPassword = [[Password alloc] initWithPassStrength:[NSNumber numberWithInt:10] WithUseUppers:1 WithUseLowers:1 WithUseSpecChar:1 WithUseNumbers:1 WithPassLength:1];
+    Password *aPassword = [[Password alloc] initWithPassStrength:[NSNumber numberWithInt:10] WithUseUppers:1 WithUseLowers:1 WithUseSpecChar:1 WithUseNumbers:1 WithPassLength:1 WithNotAllowed:@""];
     [self setPassword:aPassword];
     [self syncPassLengthUIs];
     [self setPassStrengthIndicatorLevel];
@@ -90,6 +90,12 @@
 {
     NSString *notAllowed = [sender stringValue];
     [[self password] setNotAllowed:notAllowed];
+}
+
+- (IBAction)copyToClipboard:(id)sender
+{
+    [[NSPasteboard generalPasteboard] clearContents];
+    [[NSPasteboard generalPasteboard] setString:[[self password] password] forType:NSStringPboardType];
 }
 
 @end

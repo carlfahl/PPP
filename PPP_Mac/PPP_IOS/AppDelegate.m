@@ -45,4 +45,7 @@
 
 - (IBAction)setCharNotAllowed:(id)sender {
 }
+
+- (IBAction)copyToClipboard:(id)sender {
+}
 @end
