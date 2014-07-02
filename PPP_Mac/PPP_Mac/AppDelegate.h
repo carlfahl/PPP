@@ -20,6 +20,7 @@
 @property (weak) IBOutlet NSLevelIndicator *passStrengthIndicator;
 @property (weak) IBOutlet NSTextField *passwordFeild;
 @property (weak) IBOutlet NSTextField *charNotAllowedTextField;
+@property (unsafe_unretained) IBOutlet NSViewController *pppViewContoller;
 
 @property (strong) Password *password;
 @property (retain) NSDictionary* passdict;
@@ -32,6 +33,7 @@
 - (IBAction)setUseLowers:(id)sender;
 - (IBAction)setPassLength:(id)sender;
 - (IBAction)generatePassword:(id)sender;
+- (IBAction)showAdvancedOptions:(id)sender;
 - (void) syncPassLengthUIs;
 - (void) setPassStrengthIndicatorLevel;
 - (void) setPasswordTextFeild:(NSString*)pw;

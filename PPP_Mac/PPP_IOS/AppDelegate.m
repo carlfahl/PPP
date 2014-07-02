@@ -45,4 +45,6 @@
 
 - (IBAction)setCharNotAllowed:(id)sender {
 }
+- (IBAction)showAdvancedOptions:(id)sender {
+}
 @end

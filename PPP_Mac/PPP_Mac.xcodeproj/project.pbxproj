@@ -808,6 +808,7 @@
 				0A9222B6195FE52300916E93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A9222BA195FE52300916E93 /* Build configuration list for PBXNativeTarget "PPP_IOSTests" */ = {
 			isa = XCConfigurationList;
@@ -816,6 +817,7 @@
 				0A9222B8195FE52300916E93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,6 +17,8 @@
     [self setPassword:aPassword];
     [self syncPassLengthUIs];
     [self setPassStrengthIndicatorLevel];
+    NSViewController *pppViewController = [[NSViewController alloc] initWithNibName:@"MainMenu" bundle:nil];
+    NSView *pppView = [pppViewController view];
 }
 
 - (IBAction)setUName:(id)sender {
@@ -90,6 +92,11 @@
 {
     NSString *notAllowed = [sender stringValue];
     [[self password] setNotAllowed:notAllowed];
+}
+
+- (IBAction)showAdvancedOptions:(id)sender
+{
+    
 }
 
 @end
