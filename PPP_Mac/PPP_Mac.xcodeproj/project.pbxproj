@@ -34,6 +34,7 @@
 		0A9222AA195FE52300916E93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A92228A195FE52200916E93 /* UIKit.framework */; };
 		0A9222B2195FE52300916E93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A9222B0195FE52300916E93 /* InfoPlist.strings */; };
 		0A9222B4195FE52300916E93 /* PPP_IOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9222B3195FE52300916E93 /* PPP_IOSTests.m */; };
+		0AF9AD0E196F162E00254891 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF9AD0D196F162E00254891 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		0A9222AF195FE52300916E93 /* PPP_IOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PPP_IOSTests-Info.plist"; sourceTree = "<group>"; };
 		0A9222B1195FE52300916E93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A9222B3195FE52300916E93 /* PPP_IOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPP_IOSTests.m; sourceTree = "<group>"; };
+		0AF9AD0D196F162E00254891 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF9AD0E196F162E00254891 /* libsqlite3.dylib in Frameworks */,
 				0A42CAEA195A23DB0097B581 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +166,7 @@
 		0A42CAE8195A23DB0097B581 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AF9AD0D196F162E00254891 /* libsqlite3.dylib */,
 				0A42CAE9195A23DB0097B581 /* Cocoa.framework */,
 				0A42CB08195A23DB0097B581 /* XCTest.framework */,
 				0A922286195FE52200916E93 /* Foundation.framework */,
@@ -808,6 +812,7 @@
 				0A9222B6195FE52300916E93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A9222BA195FE52300916E93 /* Build configuration list for PBXNativeTarget "PPP_IOSTests" */ = {
 			isa = XCConfigurationList;
@@ -816,6 +821,7 @@
 				0A9222B8195FE52300916E93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

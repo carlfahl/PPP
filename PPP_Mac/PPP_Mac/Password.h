@@ -19,6 +19,7 @@
 @property (assign) NSString* dName;
 @property (retain) NSNumber* passStrength;
 @property (retain) NSMutableString* password;
+@property (retain) NSMutableString* sql_ns_st;
 @property (retain) NSDictionary* retdict;
 @property (assign) NSString* specChars;
 @property (assign) NSString* letters;
